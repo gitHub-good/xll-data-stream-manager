@@ -1,0 +1,7 @@
+# Tomcat
+server:
+  port: 1995
+
+logging:
+  file:
+    name: logs/xll-data-stream-manager/info.log
