@@ -20,8 +20,8 @@
         <spring-cloud.version>2021.0.1</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <spring-boot.mybatis>3.5.2</spring-boot.mybatis>
-        <druid.version>1.2.8</druid.version>
-        <dynamic-ds.version>3.5.0</dynamic-ds.version>
+        <druid.version>1.2.11</druid.version>
+        <dynamic-ds.version>3.5.1</dynamic-ds.version>
     </properties>
 
     <dependencyManagement>
