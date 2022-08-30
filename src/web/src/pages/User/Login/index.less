@@ -13,6 +13,7 @@
   height: 40px;
   line-height: 44px;
   text-align: right;
+
   :global(.ant-dropdown-trigger) {
     margin-right: 24px;
   }
@@ -25,8 +26,10 @@
 
 @media (min-width: @screen-md-min) {
   .container {
-    background-image: url('https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/V-_oS6r-i7wAAAAAAAAAAAAAFl94AQBr');
-    background-size: cover;
+    background-image: url('../../../assets/images/background.svg');
+    background-repeat: no-repeat;
+    background-position: center 110px;
+    background-size: 100%;
   }
 
   .content {
@@ -45,4 +48,23 @@
   &:hover {
     color: @primary-color;
   }
+}
+
+.loginCodeInput {
+  width: 63%
+}
+
+.loginCode {
+  width: 33%;
+  height: 40.14px;
+  float: right;
+
+  img {
+    cursor: pointer;
+    vertical-align: middle;
+  }
+}
+
+.loginCodeImg {
+  height: 40.14px;
 }

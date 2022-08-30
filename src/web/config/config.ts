@@ -1,18 +1,22 @@
 // https://umijs.org/config/
-import { defineConfig } from '@umijs/max';
+import { defineConfig } from 'umi';
 import { join } from 'path';
 import defaultSettings from './defaultSettings';
-import proxy from './proxy';
-import routes from './routes';
+import routes from "./routes";
 
 const { REACT_APP_ENV } = process.env;
+debugger
+const REACT_APP_BASE_API = REACT_APP_ENV === 'dev' ? '/dev-api' : '/prod-api';
 
 export default defineConfig({
+  define: {
+    REACT_APP_BASE_API,
+  },
   hash: true,
   antd: {},
-  request: {},
-  initialState: {},
-  model: {},
+  dva: {
+    hmr: true,
+  },
   layout: {
     // https://umijs.org/zh-CN/plugins/plugin-layout
     locale: true,
@@ -27,7 +31,9 @@ export default defineConfig({
     // default true, when it is true, will use `navigator.language` overwrite default
     baseNavigator: true,
   },
-
+  dynamicImport: {
+    loading: '@ant-design/pro-layout/es/PageLoading',
+  },
   targets: {
     ie: 11,
   },
@@ -41,26 +47,57 @@ export default defineConfig({
     // https://ant.design/docs/react/customize-theme-variable-cn
     'root-entry-name': 'variable',
   },
+  // esbuild is father build tools
+  // https://umijs.org/plugins/plugin-esbuild
+  esbuild: {},
+  title: false,
   ignoreMomentLocale: true,
-  proxy: proxy[REACT_APP_ENV || 'dev'],
+  proxy: {
+    [REACT_APP_BASE_API]: {
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+      pathRewrite: { ['^' + REACT_APP_BASE_API]: '' },
+    },
+  },
   manifest: {
     basePath: '/',
   },
   // Fast Refresh 热更新
-  fastRefresh: true,
-  presets: ['umi-presets-pro'],
+  fastRefresh: {},
   openAPI: [
     {
-      requestLibPath: "import { request } from '@umijs/max'",
+      requestLibPath: "import { request } from 'umi'",
       // 或者使用在线的版本
       // schemaPath: "https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json"
       schemaPath: join(__dirname, 'oneapi.json'),
       mock: false,
     },
     {
-      requestLibPath: "import { request } from '@umijs/max'",
+      requestLibPath: "import { request } from 'umi'",
       schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/CA1dOm%2631B/openapi.json',
       projectName: 'swagger',
     },
   ],
+  nodeModulesTransform: {
+    type: 'none',
+  },
+  mfsu: {},
+  webpack5: {},
+  exportStatic: {},
+  chainWebpack(config, { env, webpack, createCSSRule }) {
+    // 添加gzip压缩
+    config.when(env === 'production', (config) => {
+      config
+        .plugin("compression-webpack-plugin")
+        .use(require("compression-webpack-plugin"), [
+          {
+            filename: '[path][base].gz',
+            algorithm: 'gzip',
+            test: /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i,
+            threshold: 2048,
+            minRatio: 0.8
+          },
+        ]);
+    });
+  },
 });

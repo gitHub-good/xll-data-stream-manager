@@ -1,11 +1,12 @@
-import { getNotices } from '@/services/ant-design-pro/api';
-import { useModel, useRequest } from '@umijs/max';
-import { message, Tag } from 'antd';
+import { useEffect, useState } from 'react';
+import { Tag, message } from 'antd';
 import { groupBy } from 'lodash';
 import moment from 'moment';
-import { useEffect, useState } from 'react';
-import styles from './index.less';
+import { useModel, useRequest } from 'umi';
+import { getNotices } from '@/services/ant-design-pro/api';
+
 import NoticeIcon from './NoticeIcon';
+import styles from './index.less';
 
 export type GlobalHeaderRightProps = {
   fetchingNotices?: boolean;

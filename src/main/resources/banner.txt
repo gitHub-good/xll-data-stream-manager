@@ -1,0 +1,4 @@
+Application Version: ${xll.version}
+Spring Boot Version: ${spring-boot.version}
+File Path: ${xll.profile}
+Log File Path: ${xll.logPath}
