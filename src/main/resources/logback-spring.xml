@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <!-- 日志存放路径 -->
-    <springProperty scope="context" name="LOG_PATH" source="xuliangliang.logPath" value="logs/xll-gateway"/>
-    <springProperty scope="context" name="APP_NAME" source="xuliangliang.name"/>
+    <springProperty scope="context" name="LOG_PATH" source="log.path" defaultValue="logs/"/>
+    <springProperty scope="context" name="APP_NAME" source="spring.application.name" defaultValue="xll-frame"/>
     <!-- 日志输出格式 -->
     <property name="log.pattern"
               value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${APP_NAME},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}] ${PID:-} --- %-20([%45.45thread]) %-100([%logger.%M:%L]) :%msg%n"/>

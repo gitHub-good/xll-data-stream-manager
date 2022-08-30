@@ -37,6 +37,8 @@ user:
 
 # Spring配置
 spring:
+  application:
+    name: xll-data-stream-manager
   # 资源信息
   messages:
     # 国际化资源文件路径
