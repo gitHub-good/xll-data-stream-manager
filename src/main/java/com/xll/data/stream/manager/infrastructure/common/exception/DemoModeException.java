@@ -3,7 +3,7 @@ package com.xll.data.stream.manager.infrastructure.common.exception;
 /**
  * 演示模式异常
  * 
- * @author ruoyi
+ *
  */
 public class DemoModeException extends RuntimeException
 {

@@ -17,8 +17,7 @@ public class PageUtils extends PageHelper {
     /**
      * 设置请求分页数据
      */
-    public static void startPage()
-    {
+    public static void startPage() {
         PageDomain pageDomain = TableSupport.buildPageRequest();
         Integer pageNum = pageDomain.getPageNum();
         Integer pageSize = pageDomain.getPageSize();

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * 角色信息
  * 
- * @author ruoyi
+ *
  */
 @RestController
 @RequestMapping("/system/role")
@@ -51,8 +51,7 @@ public class SysRoleController extends BaseController {
 
     @PreAuthorize("@ss.hasPermi('system:role:list')")
     @GetMapping("/list")
-    public TableDataInfo list(SysRole role)
-    {
+    public TableDataInfo list(SysRole role) {
         startPage();
         List<SysRole> list = roleService.selectRoleList(role);
         return getDataTable(list);

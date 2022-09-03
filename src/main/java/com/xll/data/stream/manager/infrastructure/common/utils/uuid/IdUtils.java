@@ -3,7 +3,7 @@ package com.xll.data.stream.manager.infrastructure.common.utils.uuid;
 /**
  * ID生成器工具类
  * 
- * @author ruoyi
+ *
  */
 public class IdUtils
 {

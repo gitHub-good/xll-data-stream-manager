@@ -8,7 +8,7 @@ import lombok.Data;
 /**
  * 字典类型表 sys_dict_type
  * 
- * @author ruoyi
+ *
  */
 @Data
 @TableName("t_sys_dict_type")

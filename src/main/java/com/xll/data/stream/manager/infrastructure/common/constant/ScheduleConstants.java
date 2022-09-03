@@ -3,7 +3,7 @@ package com.xll.data.stream.manager.infrastructure.common.constant;
 /**
  * 任务调度通用常量
  * 
- * @author ruoyi
+ *
  */
 public class ScheduleConstants
 {

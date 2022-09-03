@@ -8,7 +8,7 @@ import lombok.Data;
 /**
  * 参数配置表 sys_config
  * 
- * @author ruoyi
+ *
  */
 @Data
 @TableName("t_sys_config")

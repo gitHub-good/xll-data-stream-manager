@@ -3,7 +3,7 @@ package com.xll.data.stream.manager.domain.aggregate.system.entity;
 /**
  * 当前在线会话
  * 
- * @author ruoyi
+ *
  */
 public class SysUserOnline
 {

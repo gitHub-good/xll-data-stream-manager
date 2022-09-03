@@ -50,8 +50,7 @@ public class TableSupport {
         return pageDomain;
     }
 
-    public static PageDomain buildPageRequest()
-    {
+    public static PageDomain buildPageRequest() {
         return getPageDomain();
     }
 }

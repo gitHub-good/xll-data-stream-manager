@@ -4,18 +4,17 @@ const Settings: LayoutSettings & {
   pwa?: boolean;
   logo?: string;
 } = {
-  navTheme: 'light',
-  // 拂晓蓝
-  primaryColor: '#1890ff',
-  layout: 'mix',
-  contentWidth: 'Fluid',
-  fixedHeader: false,
-  fixSiderbar: true,
-  colorWeak: false,
+  "navTheme": "realDark",
+  "primaryColor": "#13C2C2",
+  "layout": "mix",
+  "contentWidth": "Fluid",
+  "fixedHeader": false,
+  "fixSiderbar": true,
+  "pwa": true,
   title: '数据管理平台',
-  pwa: false,
-  logo: '/logo.svg',
-  iconfontUrl: '',
+  "logo": "/logo.svg",
+  "headerHeight": 48,
+  "splitMenus": true
 };
 
 export default Settings;

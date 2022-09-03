@@ -3,7 +3,7 @@ package com.xll.data.stream.manager.infrastructure.common.enums;//package com.ru
 ///**
 // * 数据源
 // *
-// * @author ruoyi
+// *
 // */
 //public enum DataSourceType
 //{
