@@ -61,7 +61,7 @@ export async function getUser(userId: Key) {
  * @param data
  */
 export async function addUser(data: UserItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/user', {
+  return request<FrameApi.BaseRestResult>('/system/user', {
     method: 'POST',
     data: data
   })
@@ -72,7 +72,7 @@ export async function addUser(data: UserItem) {
  * @param data
  */
 export async function updateUser(data: UserItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/user', {
+  return request<FrameApi.BaseRestResult>('/system/user', {
     method: 'PUT',
     data: data
   })
@@ -83,7 +83,7 @@ export async function updateUser(data: UserItem) {
  * @param userIds
  */
 export async function delUser(userIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/system/user/' + userIds, {
+  return request<FrameApi.BaseRestResult>('/system/user/' + userIds, {
     method: 'DELETE',
   });
 }
@@ -98,7 +98,7 @@ export async function resetUserPwd(userId: Key, password: string) {
     userId,
     password,
   };
-  return request<RuoYiApi.BaseRestResult>('/system/user/resetPwd', {
+  return request<FrameApi.BaseRestResult>('/system/user/resetPwd', {
     method: 'PUT',
     data: data,
   });
@@ -114,7 +114,7 @@ export async function changeUserStatus(userId: Key, status: string) {
     userId,
     status
   };
-  return request<RuoYiApi.BaseRestResult>('/system/user/changeStatus', {
+  return request<FrameApi.BaseRestResult>('/system/user/changeStatus', {
     method: 'PUT',
     data: data,
   });
@@ -135,7 +135,7 @@ export async function getUserProfile() {
  * @param data
  */
 export async function updateUserProfile(data: UserItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/user/profile', {
+  return request<FrameApi.BaseRestResult>('/system/user/profile', {
     method: 'PUT',
     data: data,
   });
@@ -151,7 +151,7 @@ export async function updateUserPwd(oldPassword: string, newPassword: string) {
     oldPassword,
     newPassword
   };
-  return request<RuoYiApi.BaseRestResult>('/system/user/profile/updatePwd', {
+  return request<FrameApi.BaseRestResult>('/system/user/profile/updatePwd', {
     method: 'PUT',
     params: data,
   });
@@ -187,7 +187,7 @@ export async function getAuthRole(userId: Key) {
  * @param data
  */
 export async function updateAuthRole(data: { userId: Key, roleIds: Key[] }) {
-  return request<RuoYiApi.BaseRestResult>('/system/user/authRole', {
+  return request<FrameApi.BaseRestResult>('/system/user/authRole', {
     method: 'PUT',
     params: data
   })
@@ -201,7 +201,7 @@ export async function updateAuthRole(data: { userId: Key, roleIds: Key[] }) {
 export async function importUserFile(file: File, updateSupport: boolean) {
   const formData = new FormData();
   formData.append('file', file);
-  return request<RuoYiApi.BaseRestResult>('/system/user/importData', {
+  return request<FrameApi.BaseRestResult>('/system/user/importData', {
     method: 'POST',
     requestType: 'form',
     params: { updateSupport },

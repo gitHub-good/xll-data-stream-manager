@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { FC, Key } from "react";
 import { Button, message, Table } from "antd";
-import { ModalForm, ProFormGroup, ProFormText } from "@ant-design/pro-form";
-import ProTable from "@ant-design/pro-table";
-import type { ProColumns } from "@ant-design/pro-table";
+import {
+  DrawerForm, ProFormGroup, ProFormText, ProTable, ProColumns
+} from '@ant-design/pro-components';
 import type { RoleItem } from "@/pages/system/role/data";
 import { CheckCircleOutlined } from "@ant-design/icons";
 import type { UserItem } from "../data";
@@ -65,7 +65,7 @@ const AssignRole: FC<{ userId: Key }> = (props) => {
   };
 
   return (
-    <ModalForm<{
+    <DrawerForm<{
       nickName: string;
       userName: string;
     }>
@@ -78,16 +78,8 @@ const AssignRole: FC<{ userId: Key }> = (props) => {
           分配角色
         </Button>
       }
-      modalProps={
-        {
-          centered: true,
-          destroyOnClose: true,
-          keyboard: false,
-          maskClosable: false,
-        }
-      }
       title="用户分配角色"
-      width={1000}
+      width={900}
       onFinish={async () => {
         return await handleSubmit();
       }}
@@ -119,7 +111,7 @@ const AssignRole: FC<{ userId: Key }> = (props) => {
           />
         </>
       )}
-    </ModalForm>
+    </DrawerForm>
   );
 }
 

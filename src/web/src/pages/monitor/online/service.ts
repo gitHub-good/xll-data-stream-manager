@@ -34,7 +34,7 @@ export async function listOnline(params: OnlineItem & {
  * @param tokenId
  */
 export async function forceLogout(tokenId: Key) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/online/' + tokenId, {
+  return request<FrameApi.BaseRestResult>('/monitor/online/' + tokenId, {
     method: 'DELETE',
   });
 }

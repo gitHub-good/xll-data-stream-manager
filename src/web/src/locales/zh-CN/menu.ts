@@ -70,4 +70,6 @@ export default {
   'menu.monitor.cacheList': '缓存列表',
   'menu.tool': '系统工具',
   'menu.tool.swagger': '系统接口',
+  'menu.xFlow.xFlow': 'xFlow流程',
+  'menu.xFlow': 'xFlowTest',
 };

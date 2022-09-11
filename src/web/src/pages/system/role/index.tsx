@@ -3,10 +3,9 @@ import type { FC, Key, MutableRefObject, ReactText } from 'react';
 import { Access, useAccess } from "umi";
 import { Button, message, Popconfirm, Switch, Table, } from "antd";
 import type { SortOrder } from "antd/lib/table/interface";
-import { PageContainer } from "@ant-design/pro-layout";
-import type { ProFormInstance } from "@ant-design/pro-form";
-import type { ProColumns, ActionType } from "@ant-design/pro-table";
-import ProTable, { TableDropdown } from "@ant-design/pro-table";
+import {
+  PageContainer, TableDropdown,ProFormInstance,ProColumns, ActionType,ProTable
+} from '@ant-design/pro-components';
 import { DeleteOutlined, DoubleRightOutlined, EditOutlined, ExportOutlined, PlusOutlined } from "@ant-design/icons";
 import { dict, download, modal } from '@/utils';
 import type { RoleItem } from "./data";

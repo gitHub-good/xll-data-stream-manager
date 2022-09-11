@@ -69,7 +69,7 @@ export async function getCacheValue(cacheName: string, cacheKey: string) {
  * @param cacheName
  */
 export async function clearCacheName(cacheName: string) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/cache/clearCacheName/' + cacheName, {
+  return request<FrameApi.BaseRestResult>('/monitor/cache/clearCacheName/' + cacheName, {
     method: 'DELETE',
   });
 }
@@ -79,7 +79,7 @@ export async function clearCacheName(cacheName: string) {
  * @param cacheKey
  */
 export async function clearCacheKey(cacheKey: string) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/cache/clearCacheKey/' + cacheKey, {
+  return request<FrameApi.BaseRestResult>('/monitor/cache/clearCacheKey/' + cacheKey, {
     method: 'DELETE',
   });
 }
@@ -88,7 +88,7 @@ export async function clearCacheKey(cacheKey: string) {
  * 清理全部缓存
  */
 export async function clearCacheAll() {
-  return request<RuoYiApi.BaseRestResult>('/monitor/cache/clearCacheAll', {
+  return request<FrameApi.BaseRestResult>('/monitor/cache/clearCacheAll', {
     method: 'DELETE',
   });
 }

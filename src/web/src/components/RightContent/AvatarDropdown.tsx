@@ -5,7 +5,7 @@ import { history, useModel } from 'umi';
 import { stringify } from 'querystring';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
-import { logout } from '@/services/ruoyi/login';
+import { logout } from '@/services/frame/login';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import { auth } from "@/utils";
 

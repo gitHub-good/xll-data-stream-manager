@@ -2,9 +2,9 @@
  * @see https://umijs.org/zh-CN/plugins/plugin-access
  * */
 export default function access(initialState: {
-  currentUser?: RuoYiApi.CurrentUser;
-  roles?: RuoYiApi.Roles;
-  permissions?: RuoYiApi.Permissions;
+  currentUser?: FrameApi.CurrentUser;
+  roles?: FrameApi.Roles;
+  permissions?: FrameApi.Permissions;
 } | undefined) {
   const { permissions } = initialState ?? {};
   const all_permission = "*:*:*";

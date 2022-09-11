@@ -84,11 +84,9 @@ public class AsyncFactory {
      * @return 任务task
      */
     public static TimerTask recordOperate(final SysOperateLog operateLog) {
-        return new TimerTask()
-        {
+        return new TimerTask() {
             @Override
-            public void run()
-            {
+            public void run() {
                 // 远程查询操作地点
                 operateLog.setOperLocation(AddressUtils.getRealAddressByIP(operateLog.getOperIp()));
                 SpringUtils.getBean(SysOperateLogDao.class).insertOperateLog(operateLog);

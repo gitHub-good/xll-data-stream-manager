@@ -2,8 +2,9 @@ import type { FC, Key, MutableRefObject, ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { Button, message } from "antd";
 import type { ButtonType } from "antd/lib/button/button";
-import { ModalForm, ProFormDigit, ProFormRadio, ProFormText, ProFormTreeSelect } from "@ant-design/pro-form";
-import type { ActionType } from "@ant-design/pro-table";
+import {
+  DrawerForm, ProFormDigit, ProFormRadio, ProFormText, ProFormTreeSelect, ActionType
+} from '@ant-design/pro-components';
 
 import { dataFormat } from "@/utils";
 import { addMenu, getMenu, listMenu, updateMenu } from "../service";
@@ -54,7 +55,7 @@ const MenuEditor: FC<{
   };
 
   return (
-    <ModalForm<MenuItem>
+    <DrawerForm<MenuItem>
       onVisibleChange={(visible) => {
         setModalVisibleState(visible);
       }}
@@ -63,14 +64,6 @@ const MenuEditor: FC<{
         <Button icon={props.icon} size="small" type={props.type ? props.type : 'default'} disabled={props.disabled}>
           {props.content}
         </Button>
-      }
-      modalProps={
-        {
-          centered: true,
-          destroyOnClose: true,
-          keyboard: false,
-          maskClosable: false,
-        }
       }
       title={props.title}
       width={800}
@@ -141,7 +134,7 @@ const MenuEditor: FC<{
           <ProFormRadio.Group width="md" name="status" label="菜单状态" fieldProps={{ options: props?.dicts?.sys_normal_disable || [] }} colProps={{ span: 12 }} />
         </>
       )}
-    </ModalForm>
+    </DrawerForm>
   );
 }
 

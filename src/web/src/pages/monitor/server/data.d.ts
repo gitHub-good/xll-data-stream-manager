@@ -1,4 +1,4 @@
-import BaseRestResult = RuoYiApi.BaseRestResult;
+import BaseRestResult = FrameApi.BaseRestResult;
 
 export interface CpuInfo {
   cpuNum?: number;

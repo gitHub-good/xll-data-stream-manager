@@ -84,7 +84,7 @@ export async function roleMenuTreeselect(roleId: Key) {
  * @param data
  */
 export async function addMenu(data: MenuItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/menu', {
+  return request<FrameApi.BaseRestResult>('/system/menu', {
     method: 'POST',
     data: data
   });
@@ -95,7 +95,7 @@ export async function addMenu(data: MenuItem) {
  * @param data
  */
 export async function updateMenu(data: MenuItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/menu', {
+  return request<FrameApi.BaseRestResult>('/system/menu', {
     method: 'PUT',
     data: data
   });
@@ -106,7 +106,7 @@ export async function updateMenu(data: MenuItem) {
  * @param menuId
  */
 export async function delMenu(menuId: Key) {
-  return request<RuoYiApi.BaseRestResult>('/system/menu/' + menuId, {
+  return request<FrameApi.BaseRestResult>('/system/menu/' + menuId, {
     method: 'DELETE'
   });
 }

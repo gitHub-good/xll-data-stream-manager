@@ -61,7 +61,7 @@ export async function getPost(postId: Key) {
  * @param data
  */
 export async function addPost(data: PostItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/post', {
+  return request<FrameApi.BaseRestResult>('/system/post', {
     method: 'POST',
     data: data
   });
@@ -72,7 +72,7 @@ export async function addPost(data: PostItem) {
  * @param data
  */
 export async function updatePost(data: PostItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/post', {
+  return request<FrameApi.BaseRestResult>('/system/post', {
     method: 'PUT',
     data: data,
   });
@@ -83,7 +83,7 @@ export async function updatePost(data: PostItem) {
  * @param postIds
  */
 export async function delPost(postIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/system/post/' + postIds, {
+  return request<FrameApi.BaseRestResult>('/system/post/' + postIds, {
     method: 'DELETE',
   });
 }

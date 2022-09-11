@@ -15,8 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  * @Author: xuliangliang
  * @Date: 2022/8/27 14:46
  */
-public class SecurityUtils
-{
+public class SecurityUtils {
     /**
      * 用户ID
      **/
@@ -65,14 +64,10 @@ public class SecurityUtils
     /**
      * 获取用户
      **/
-    public static LoginUser getLoginUser()
-    {
-        try
-        {
+    public static LoginUser getLoginUser() {
+        try {
             return (LoginUser) getAuthentication().getPrincipal();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new ServiceException("获取用户信息异常", HttpStatus.UNAUTHORIZED);
         }
     }
@@ -80,8 +75,7 @@ public class SecurityUtils
     /**
      * 获取Authentication
      */
-    public static Authentication getAuthentication()
-    {
+    public static Authentication getAuthentication() {
         return SecurityContextHolder.getContext().getAuthentication();
     }
 
@@ -91,8 +85,7 @@ public class SecurityUtils
      * @param password 密码
      * @return 加密字符串
      */
-    public static String encryptPassword(String password)
-    {
+    public static String encryptPassword(String password) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.encode(password);
     }

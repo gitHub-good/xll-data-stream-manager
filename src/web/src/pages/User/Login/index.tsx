@@ -1,12 +1,14 @@
 import { LockOutlined, MailOutlined, MobileOutlined, SecurityScanOutlined, UserOutlined, } from '@ant-design/icons';
 import { Alert, Form, Image, Input, message, Tabs } from 'antd';
 import React, { useState, useEffect } from 'react';
-import { ProFormCaptcha, ProFormCheckbox, ProFormText, LoginForm } from '@ant-design/pro-form';
+import {
+  ProFormCaptcha, ProFormCheckbox, ProFormText, LoginForm
+} from '@ant-design/pro-components';
 import { useIntl, history, FormattedMessage, SelectLang, useModel } from 'umi';
 import Footer from '@/components/Footer';
 
 import styles from './index.less';
-import { getCodeImg, login } from "@/services/ruoyi/login";
+import { getCodeImg, login } from "@/services/frame/login";
 import { auth, jsencrypt } from "@/utils";
 import Cookies from 'js-cookie';
 
@@ -24,12 +26,12 @@ const LoginMessage: React.FC<{
 );
 
 const Login: React.FC = () => {
-  const [userLoginState, setUserLoginState] = useState<RuoYiApi.LoginResult>({});
+  const [userLoginState, setUserLoginState] = useState<FrameApi.LoginResult>({});
   const [type, setType] = useState<string>('account');
   const { initialState, setInitialState } = useModel('@@initialState');
 
   /** 图片验证码接口state */
-  const [captchaImage, setCaptchaImage] = useState<RuoYiApi.CaptchaImage>({ captchaEnabled: true, imgUrl: 'error' });
+  const [captchaImage, setCaptchaImage] = useState<FrameApi.CaptchaImage>({ captchaEnabled: true, imgUrl: 'error' });
 
   /** 获取图片验证码接口数据 */
   const getCaptchaImage = async () => {
@@ -67,7 +69,7 @@ const Login: React.FC = () => {
   };
 
   // 登录按钮处理方法
-  const handleSubmit = async (values: RuoYiApi.LoginParams) => {
+  const handleSubmit = async (values: FrameApi.LoginParams) => {
     if (type === 'account') {
       // 账户密码登录
       try {
@@ -150,7 +152,7 @@ const Login: React.FC = () => {
           //   <WeiboCircleOutlined key="WeiboCircleOutlined" className={styles.icon} />,
           // ]}
           onFinish={async (values) => {
-            await handleSubmit(values as RuoYiApi.LoginParams);
+            await handleSubmit(values as FrameApi.LoginParams);
           }}
         >
           <Tabs activeKey={type} onChange={setType}>

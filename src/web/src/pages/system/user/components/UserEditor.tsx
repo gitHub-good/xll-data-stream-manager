@@ -2,8 +2,9 @@ import type { FC, Key, MutableRefObject, ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { Button, message } from "antd";
 import type { ButtonType } from "antd/lib/button/button";
-import { ModalForm, ProFormRadio, ProFormSelect, ProFormText, ProFormTextArea, ProFormTreeSelect } from "@ant-design/pro-form";
-import type { ActionType } from "@ant-design/pro-table";
+import {
+  DrawerForm, ProFormRadio, ProFormSelect, ProFormText, ProFormTextArea, ProFormTreeSelect , ActionType
+} from '@ant-design/pro-components';
 import type { DefaultOptionType, RawValueType } from "rc-tree-select/lib/TreeSelect";
 
 import { dataFormat } from "@/utils";
@@ -58,7 +59,7 @@ const UserEditor: FC<{
   }
 
   return (
-    <ModalForm<UserItem>
+    <DrawerForm<UserItem>
       onVisibleChange={(visible) => {
         setModalVisibleState(visible);
       }}
@@ -68,16 +69,8 @@ const UserEditor: FC<{
           {props.content}
         </Button>
       }
-      modalProps={
-        {
-          centered: true,
-          destroyOnClose: true,
-          keyboard: false,
-          maskClosable: false,
-        }
-      }
       title={props.title}
-      width={800}
+      width={900}
       onFinish={async (values) => {
         return await submitForm({ ...userItemState, ...values });
       }}
@@ -144,7 +137,7 @@ const UserEditor: FC<{
           <ProFormTextArea width="md" name="remark" label="备注" placeholder="请输入内容" colProps={{ span: 12 }} />
         </>
       )}
-    </ModalForm>
+    </DrawerForm>
   );
 }
 

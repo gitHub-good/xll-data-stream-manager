@@ -61,7 +61,7 @@ export async function getType(dictId: Key) {
  * @param data
  */
 export async function addType(data: DictTypeItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/dict/type', {
+  return request<FrameApi.BaseRestResult>('/system/dict/type', {
     method: 'POST',
     data: data
   });
@@ -72,7 +72,7 @@ export async function addType(data: DictTypeItem) {
  * @param data
  */
 export async function updateType(data: DictTypeItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/dict/type', {
+  return request<FrameApi.BaseRestResult>('/system/dict/type', {
     method: 'PUT',
     data: data
   });
@@ -83,7 +83,7 @@ export async function updateType(data: DictTypeItem) {
  * @param dictIds
  */
 export async function delType(dictIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/system/dict/type/' + dictIds, {
+  return request<FrameApi.BaseRestResult>('/system/dict/type/' + dictIds, {
     method: 'DELETE'
   });
 }
@@ -92,7 +92,7 @@ export async function delType(dictIds: Key[]) {
  * 刷新字典缓存
  */
 export async function refreshCache() {
-  return request<RuoYiApi.BaseRestResult>('/system/dict/type/refreshCache', {
+  return request<FrameApi.BaseRestResult>('/system/dict/type/refreshCache', {
     method: 'DELETE'
   });
 }

@@ -1,8 +1,8 @@
 // @ts-ignore
 /* eslint-disable */
 
-declare namespace RuoYiApi {
-  /** 若依后端基本接口 */
+declare namespace FrameApi {
+  /**后端基本接口 */
   interface BaseRestResult {
     code?: number;
     msg?: string;

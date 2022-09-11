@@ -18,8 +18,8 @@ export default defineConfig({
     hmr: true,
   },
   layout: {
-    // https://umijs.org/zh-CN/plugins/plugin-layout
-    locale: true,
+    // https://umijs.org/zh-CN/plugins/plugin-layout 默认关闭国际化
+    locale: false,
     siderWidth: 208,
     ...defaultSettings,
   },

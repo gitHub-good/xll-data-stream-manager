@@ -6,7 +6,7 @@ import { history, Link } from 'umi';
 import type { RequestOptionsInit } from 'umi-request';
 import RightContent from '@/components/RightContent';
 import Footer from '@/components/Footer';
-import { getInfo } from './services/ruoyi/login';
+import { getInfo } from './services/frame/login';
 import { BookOutlined, LinkOutlined } from '@ant-design/icons';
 import defaultSettings from '../config/defaultSettings';
 import { message } from "antd";
@@ -25,11 +25,11 @@ export const initialStateConfig = {
  * */
 export async function getInitialState(): Promise<{
   settings?: Partial<LayoutSettings>;
-  currentUser?: RuoYiApi.CurrentUser;
+  currentUser?: FrameApi.CurrentUser;
   loading?: boolean;
-  roles?: RuoYiApi.Roles;
-  permissions?: RuoYiApi.Permissions;
-  fetchUserInfo?: () => Promise<RuoYiApi.UserInfo | undefined>;
+  roles?: FrameApi.Roles;
+  permissions?: FrameApi.Permissions;
+  fetchUserInfo?: () => Promise<FrameApi.UserInfo | undefined>;
 }> {
   // 获取当前用户信息方法
   const fetchUserInfo = async () => {

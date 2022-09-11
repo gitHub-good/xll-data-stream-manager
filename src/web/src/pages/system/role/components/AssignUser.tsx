@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FC, Key } from "react";
-import { Modal, Button } from 'antd';
+import { Drawer, Button } from 'antd';
 import { UserOutlined } from "@ant-design/icons";
-import ProCard from '@ant-design/pro-card';
-import type { ActionType } from "@ant-design/pro-table";
+import {
+  ProCard, ActionType
+} from '@ant-design/pro-components';
 import { dict } from '@/utils';
 import AssignUserUnAllocatedTable from "./AssignUserUnAllocatedTable";
 import AssignUserAllocatedTable from "./AssignUserAllocatedTable";
@@ -47,16 +48,14 @@ const AssignUser: FC<{ roleId: Key; }> = (props) => {
       <Button icon={<UserOutlined />} type="text" size='small' onClick={() => setVisible(true)}>
         分配用户
       </Button>
-      <Modal
+      <Drawer
         title="分配用户"
-        centered={false}
         destroyOnClose={true}
         keyboard={false}
+        closable={true}
         maskClosable={false}
         visible={visible}
-        onOk={() => setVisible(false)}
-        onCancel={() => setVisible(false)}
-        width={1800}
+        width={1200}
         footer={
           <Button type="default" size='small' onClick={() => setVisible(false)}>
             关闭
@@ -73,7 +72,7 @@ const AssignUser: FC<{ roleId: Key; }> = (props) => {
             </ProCard>
           </ProCard>
         )}
-      </Modal>
+      </Drawer>
     </>
   );
 };

@@ -11,6 +11,7 @@ import com.xll.data.stream.manager.domain.aggregate.system.entity.SysOperateLog;
 import com.xll.data.stream.manager.domain.aggregate.system.mapper.SysOperateLogMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,8 +36,8 @@ public class SysOperateLogDaoImpl extends ServiceImpl<SysOperateLogMapper, SysOp
                 .like(StringUtils.isNotBlank(operateLog.getOperName()), SysOperateLog::getOperName, operateLog.getOperName())
                 .eq(operateLog.getStatus() != null, SysOperateLog::getStatus, operateLog.getStatus())
                 .in(CollectionUtils.isNotEmpty(Lists.newArrayList(operateLog.getBusinessTypes())), SysOperateLog::getBusinessType, Lists.newArrayList(operateLog.getBusinessTypes()))
-                .lt(ObjectUtils.isNotEmpty(operateLog.getParams().get("beginTime")), SysOperateLog::getCreateTime, operateLog.getParams().get("beginTime"))
-                .gt(ObjectUtils.isNotEmpty(operateLog.getParams().get("endTime")), SysOperateLog::getCreateTime, operateLog.getParams().get("endTime"))
+//                .lt(ObjectUtils.isNotEmpty(operateLog.getParams().get("beginTime")), SysOperateLog::getCreateTime, operateLog.getParams().get("beginTime"))
+//                .gt(ObjectUtils.isNotEmpty(operateLog.getParams().get("endTime")), SysOperateLog::getCreateTime, operateLog.getParams().get("endTime"))
         );
     }
 

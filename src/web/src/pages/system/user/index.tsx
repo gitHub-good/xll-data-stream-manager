@@ -5,10 +5,9 @@ import { Button, Col, Input, message, Popconfirm, Row, Switch, Table, Tooltip, T
 import type { SortOrder } from "antd/lib/table/interface";
 import type { DataNode } from "rc-tree/lib/interface";
 import type { DefaultOptionType } from "rc-tree-select/lib/TreeSelect";
-import { PageContainer } from "@ant-design/pro-layout";
-import type { ActionType, ProColumns } from "@ant-design/pro-table";
-import ProTable, { TableDropdown } from "@ant-design/pro-table";
-import type { ProFormInstance } from '@ant-design/pro-form';
+import {
+  ProFormInstance, TableDropdown, ActionType, ProColumns, PageContainer, ProTable
+} from '@ant-design/pro-components';
 import { DeleteOutlined, DoubleRightOutlined, EditOutlined, ExportOutlined, PlusOutlined } from "@ant-design/icons";
 import styles from './index.less'
 import { changeUserStatus, delUser, deptTreeSelect, listUser } from "./service";

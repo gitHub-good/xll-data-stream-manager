@@ -2,8 +2,9 @@ import type { FC, Key, ReactText, MutableRefObject } from "react";
 import { useState } from "react";
 import { Button, message, Table } from 'antd';
 import type { SortOrder } from "antd/lib/table/interface";
-import type { ActionType, ProColumns } from "@ant-design/pro-table";
-import ProTable from "@ant-design/pro-table";
+import {
+  ProTable, ActionType, ProColumns
+} from '@ant-design/pro-components';
 import { CheckCircleOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import { dict, modal } from "@/utils";
 import { authUserSelectAll, unallocatedUserList } from "../service";

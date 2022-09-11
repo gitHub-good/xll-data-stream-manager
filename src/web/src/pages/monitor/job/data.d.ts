@@ -1,4 +1,4 @@
-import BaseRestResult = RuoYiApi.BaseRestResult;
+import BaseRestResult = FrameApi.BaseRestResult;
 import type { Key } from "react";
 
 export interface JobItem {

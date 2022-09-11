@@ -2,7 +2,9 @@ import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Col, message, Row, Upload } from 'antd';
-import ProForm, { ProFormRadio, ProFormText } from '@ant-design/pro-form';
+import {
+  ProForm, ProFormRadio, ProFormText
+} from '@ant-design/pro-components';
 import { request, useModel, useRequest } from 'umi';
 import ImgCrop from 'antd-img-crop';
 
@@ -39,7 +41,7 @@ const AvatarView: FC<{ avatar: string; run: () => Promise<UserProfile>; }> = ({ 
                 customRequest={async (options) => {
                   const formData = new FormData();
                   formData.append('avatarfile', options.file);
-                  await request<{ imgUrl: string } & RuoYiApi.BaseRestResult>('/system/user/profile/avatar', {
+                  await request<{ imgUrl: string } & FrameApi.BaseRestResult>('/system/user/profile/avatar', {
                     method: 'POST',
                     requestType: 'form',
                     data: formData,

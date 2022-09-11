@@ -1,10 +1,9 @@
 import type { FC, ReactText, Key, MutableRefObject } from 'react';
 import { useEffect, useRef, useState } from "react";
 import { Access, useAccess } from "umi";
-import { PageContainer } from "@ant-design/pro-layout";
-import type { ActionType, ProColumns } from "@ant-design/pro-table";
-import ProTable from "@ant-design/pro-table";
-import type { ProFormInstance } from "@ant-design/pro-form";
+import {
+  ProFormInstance, ActionType, ProColumns, PageContainer, ProTable
+} from '@ant-design/pro-components';
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import { Button, message } from "antd";
 import type { SortOrder } from "antd/lib/table/interface";

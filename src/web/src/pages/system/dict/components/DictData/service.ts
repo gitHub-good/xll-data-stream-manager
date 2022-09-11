@@ -71,7 +71,7 @@ export async function getDicts(dictType: string) {
  * @param data
  */
 export async function addData(data: DictDataItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/dict/data', {
+  return request<FrameApi.BaseRestResult>('/system/dict/data', {
     method: 'POST',
     data: data,
   });
@@ -82,7 +82,7 @@ export async function addData(data: DictDataItem) {
  * @param data
  */
 export async function updateData(data: DictDataItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/dict/data', {
+  return request<FrameApi.BaseRestResult>('/system/dict/data', {
     method: 'PUT',
     data: data,
   });
@@ -93,7 +93,7 @@ export async function updateData(data: DictDataItem) {
  * @param dictCodes
  */
 export async function delData(dictCodes: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/system/dict/data/' + dictCodes, {
+  return request<FrameApi.BaseRestResult>('/system/dict/data/' + dictCodes, {
     method: 'DELETE',
   });
 }

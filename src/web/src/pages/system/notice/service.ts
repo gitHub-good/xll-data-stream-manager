@@ -61,7 +61,7 @@ export async function getNotice(noticeId: Key) {
  * @param data
  */
 export async function addNotice(data: NoticeItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/notice', {
+  return request<FrameApi.BaseRestResult>('/system/notice', {
     method: 'POST',
     data: data,
   });
@@ -72,7 +72,7 @@ export async function addNotice(data: NoticeItem) {
  * @param data
  */
 export async function updateNotice(data: NoticeItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/notice', {
+  return request<FrameApi.BaseRestResult>('/system/notice', {
     method: 'PUT',
     data: data,
   });
@@ -83,7 +83,7 @@ export async function updateNotice(data: NoticeItem) {
  * @param noticeIds
  */
 export async function delNotice(noticeIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/system/notice/' + noticeIds, {
+  return request<FrameApi.BaseRestResult>('/system/notice/' + noticeIds, {
     method: 'DELETE',
   });
 }

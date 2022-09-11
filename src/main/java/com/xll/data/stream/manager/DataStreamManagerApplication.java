@@ -15,7 +15,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @Date: 2022/8/18 21:46
  */
 @Slf4j
-//@MapperScan("com.xll.data.stream.manager.domain.aggregate.system.mapper")
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 public class DataStreamManagerApplication {
 

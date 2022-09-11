@@ -151,8 +151,7 @@ public class BaseController {
     /**
      * 获取用户缓存信息
      */
-    public LoginUser getLoginUser()
-    {
+    public LoginUser getLoginUser() {
         return SecurityUtils.getLoginUser();
     }
 

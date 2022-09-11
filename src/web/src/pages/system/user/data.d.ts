@@ -1,5 +1,5 @@
 import type { Key } from "react";
-import BaseRestResult = RuoYiApi.BaseRestResult;
+import BaseRestResult = FrameApi.BaseRestResult;
 import type { RoleItem } from "../role/data";
 import type { PostItem } from "../post/data";
 import type { DeptItem } from "../dept/data";

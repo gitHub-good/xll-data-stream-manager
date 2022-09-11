@@ -1,5 +1,7 @@
 import type { FC } from 'react';
-import { ProForm, ProFormText } from "@ant-design/pro-form";
+import {
+  ProForm, ProFormText
+} from '@ant-design/pro-components';
 import { Col, message, Row } from 'antd'
 import { updateUserPwd } from "../../service";
 

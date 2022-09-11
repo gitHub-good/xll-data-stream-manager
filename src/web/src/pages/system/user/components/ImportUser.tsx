@@ -1,8 +1,9 @@
 import type { FC, MutableRefObject } from "react";
 import { useState } from "react";
 import { Button, message } from "antd";
-import { ModalForm, ProFormCheckbox, ProFormUploadDragger } from "@ant-design/pro-form";
-import type { ActionType } from "@ant-design/pro-table";
+import {
+  DrawerForm, ProFormCheckbox, ProFormUploadDragger , ActionType
+} from '@ant-design/pro-components';
 import { ImportOutlined } from "@ant-design/icons";
 import { download } from "@/utils";
 import { importUserFile } from "../service";
@@ -23,7 +24,7 @@ const ImportUser: FC<{ tableActionRef: MutableRefObject<ActionType | undefined> 
   const [downloadButtonSpinning, setDownloadButtonSpinning] = useState(false);
 
   return (
-    <ModalForm<{
+    <DrawerForm<{
       files: { originFileObj: File }[];
       updateSupport: boolean;
     }>
@@ -33,16 +34,8 @@ const ImportUser: FC<{ tableActionRef: MutableRefObject<ActionType | undefined> 
           导入
         </Button>
       }
-      modalProps={
-        {
-          centered: true,
-          destroyOnClose: true,
-          keyboard: false,
-          maskClosable: false,
-        }
-      }
       title="用户导入"
-      width={400}
+      width={900}
       onFinish={async (values) => {
         return await handleSubmit(values.files[0].originFileObj, values.updateSupport, props.tableActionRef);
       }}
@@ -85,7 +78,7 @@ const ImportUser: FC<{ tableActionRef: MutableRefObject<ActionType | undefined> 
           setDownloadButtonSpinning(false);
         }
       }}>下载模板</Button>
-    </ModalForm>
+    </DrawerForm>
   );
 };
 

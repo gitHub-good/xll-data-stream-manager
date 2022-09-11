@@ -61,7 +61,7 @@ export async function getConfig(configId: Key) {
  * @param configKey
  */
 export async function getConfigKey(configKey: string) {
-  const result = await request<RuoYiApi.BaseRestResult>('/system/config/configKey/' + configKey, {
+  const result = await request<FrameApi.BaseRestResult>('/system/config/configKey/' + configKey, {
     method: 'GET',
   });
   return result.msg;
@@ -72,7 +72,7 @@ export async function getConfigKey(configKey: string) {
  * @param data
  */
 export async function addConfig(data: ConfigItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/config', {
+  return request<FrameApi.BaseRestResult>('/system/config', {
     method: 'POST',
     data: data,
   });
@@ -83,7 +83,7 @@ export async function addConfig(data: ConfigItem) {
  * @param data
  */
 export async function updateConfig(data: ConfigItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/config', {
+  return request<FrameApi.BaseRestResult>('/system/config', {
     method: 'PUT',
     data: data,
   });
@@ -94,7 +94,7 @@ export async function updateConfig(data: ConfigItem) {
  * @param configIds
  */
 export async function delConfig(configIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/system/config/' + configIds, {
+  return request<FrameApi.BaseRestResult>('/system/config/' + configIds, {
     method: 'DELETE',
   });
 }
@@ -103,7 +103,7 @@ export async function delConfig(configIds: Key[]) {
  * 刷新参数缓存
  */
 export async function refreshCache() {
-  return request<RuoYiApi.BaseRestResult>('/system/config/refreshCache', {
+  return request<FrameApi.BaseRestResult>('/system/config/refreshCache', {
     method: 'DELETE',
   });
 }

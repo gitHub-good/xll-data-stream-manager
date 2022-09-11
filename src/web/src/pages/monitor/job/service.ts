@@ -61,7 +61,7 @@ export async function getJob(jobId: Key) {
  * @param data
  */
 export async function addJob(data: JobItem) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/job', {
+  return request<FrameApi.BaseRestResult>('/monitor/job', {
     method: 'POST',
     data: data,
   });
@@ -72,7 +72,7 @@ export async function addJob(data: JobItem) {
  * @param data
  */
 export async function updateJob(data: JobItem) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/job', {
+  return request<FrameApi.BaseRestResult>('/monitor/job', {
     method: 'PUT',
     data: data,
   });
@@ -83,7 +83,7 @@ export async function updateJob(data: JobItem) {
  * @param jobIds
  */
 export async function delJob(jobIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/job/' + jobIds, {
+  return request<FrameApi.BaseRestResult>('/monitor/job/' + jobIds, {
     method: 'DELETE',
   });
 }
@@ -98,7 +98,7 @@ export async function changeJobStatus(jobId: Key, status: string) {
     jobId,
     status
   };
-  return request<RuoYiApi.BaseRestResult>('/monitor/job/changeStatus', {
+  return request<FrameApi.BaseRestResult>('/monitor/job/changeStatus', {
     method: 'PUT',
     data: data,
   });
@@ -114,7 +114,7 @@ export async function runJob(jobId: Key, jobGroup: string) {
     jobId,
     jobGroup
   };
-  return request<RuoYiApi.BaseRestResult>('/monitor/job/run', {
+  return request<FrameApi.BaseRestResult>('/monitor/job/run', {
     method: 'PUT',
     data: data,
   });

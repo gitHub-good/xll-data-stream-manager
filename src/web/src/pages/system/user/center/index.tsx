@@ -1,7 +1,9 @@
 import { ClusterOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
 import { Card, Col, Divider, Row } from 'antd';
 import React, { useState } from 'react';
-import { GridContent } from '@ant-design/pro-layout';
+import {
+  GridContent
+} from '@ant-design/pro-components';
 import { useRequest } from 'umi';
 import type { RouteChildrenProps } from 'react-router';
 import styles from './Center.less';

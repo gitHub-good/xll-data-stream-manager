@@ -1,5 +1,6 @@
 package com.xll.data.stream.manager.domain.aggregate.system.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -7,6 +8,8 @@ import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 功能描述: <br>
@@ -18,7 +21,7 @@ import java.util.Date;
  */
 @Data
 @TableName("t_sys_operate_log")
-public class SysOperateLog extends BaseEntity {
+public class SysOperateLog  {
 
     /** 日志主键 */
     @TableId
@@ -72,4 +75,15 @@ public class SysOperateLog extends BaseEntity {
     /** 操作时间 */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date operTime;
+
+    /** 请求参数 */
+    @TableField(exist = false)
+    private Map<String, Object> params;
+
+    public Map<String, Object> getParams() {
+        if (params == null) {
+            params = new HashMap<>();
+        }
+        return params;
+    }
 }

@@ -50,7 +50,7 @@ export async function listOperlog(params: OperLogItem & {
  * @param operIds
  */
 export async function delOperlog(operIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/operlog/' + operIds, {
+  return request<FrameApi.BaseRestResult>('/monitor/operlog/' + operIds, {
     method: 'DELETE',
   });
 }
@@ -59,7 +59,7 @@ export async function delOperlog(operIds: Key[]) {
  * 清空操作日志
  */
 export async function cleanOperlog() {
-  return request<RuoYiApi.BaseRestResult>('/monitor/operlog/clean', {
+  return request<FrameApi.BaseRestResult>('/monitor/operlog/clean', {
     method: 'DELETE',
   });
 }

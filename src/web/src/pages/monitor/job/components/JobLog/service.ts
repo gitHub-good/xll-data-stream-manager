@@ -50,7 +50,7 @@ export async function listJobLog(params: JobLogItem & {
  * @param jobLogIds
  */
 export async function delJobLog(jobLogIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/jobLog/' + jobLogIds, {
+  return request<FrameApi.BaseRestResult>('/monitor/jobLog/' + jobLogIds, {
     method: 'DELETE',
   });
 }
@@ -59,7 +59,7 @@ export async function delJobLog(jobLogIds: Key[]) {
  * 清空调度日志
  */
 export async function cleanJobLog() {
-  return request<RuoYiApi.BaseRestResult>('/monitor/jobLog/clean', {
+  return request<FrameApi.BaseRestResult>('/monitor/jobLog/clean', {
     method: 'DELETE',
   });
 }

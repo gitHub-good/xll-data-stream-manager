@@ -96,6 +96,6 @@ public class SysMenuDaoImpl extends ServiceImpl<SysMenuMapper, SysMenu> implemen
 
     @Override
     public SysMenu checkMenuNameUnique(String menuName, Long parentId) {
-        return getOne(Wrappers.lambdaQuery(SysMenu.class).eq(SysMenu::getMenuName, menuName).eq(SysMenu::getParentId, parentId));
+        return baseMapper.checkMenuNameUnique(menuName, parentId);
     }
 }

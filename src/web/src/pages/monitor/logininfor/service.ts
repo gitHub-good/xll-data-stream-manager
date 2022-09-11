@@ -50,7 +50,7 @@ export async function listLoginInfo(params: LoginInfoItem & {
  * @param infoIds
  */
 export async function delLoginInfo(infoIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/logininfor/' + infoIds, {
+  return request<FrameApi.BaseRestResult>('/monitor/logininfor/' + infoIds, {
     method: 'DELETE',
   });
 }
@@ -60,7 +60,7 @@ export async function delLoginInfo(infoIds: Key[]) {
  * @param userName
  */
 export async function unlockLogininfor(userName: string) {
-  return request<RuoYiApi.BaseRestResult>('/monitor/logininfor/unlock/' + userName, {
+  return request<FrameApi.BaseRestResult>('/monitor/logininfor/unlock/' + userName, {
     method: 'GET',
   });
 }
@@ -69,7 +69,7 @@ export async function unlockLogininfor(userName: string) {
  * 清空登录日志
  */
 export async function cleanLoginInfo() {
-  return request<RuoYiApi.BaseRestResult>('/monitor/logininfor/clean', {
+  return request<FrameApi.BaseRestResult>('/monitor/logininfor/clean', {
     method: 'DELETE',
   });
 }

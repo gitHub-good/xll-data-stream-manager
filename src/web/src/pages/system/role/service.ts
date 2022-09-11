@@ -63,7 +63,7 @@ export async function getRole(roleId: Key) {
  * @param data
  */
 export async function addRole(data: RoleItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/role', {
+  return request<FrameApi.BaseRestResult>('/system/role', {
     method: 'POST',
     data: data
   })
@@ -74,7 +74,7 @@ export async function addRole(data: RoleItem) {
  * @param data
  */
 export async function updateRole(data: RoleItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/role', {
+  return request<FrameApi.BaseRestResult>('/system/role', {
     method: 'PUT',
     data: data
   })
@@ -85,7 +85,7 @@ export async function updateRole(data: RoleItem) {
  * @param data
  */
 export async function dataScope(data: RoleItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/role/dataScope', {
+  return request<FrameApi.BaseRestResult>('/system/role/dataScope', {
     method: 'PUT',
     data: data,
   });
@@ -101,7 +101,7 @@ export async function changeRoleStatus(roleId: Key, status: string) {
     roleId,
     status
   };
-  return request<RuoYiApi.BaseRestResult>('/system/role/changeStatus', {
+  return request<FrameApi.BaseRestResult>('/system/role/changeStatus', {
     method: 'PUT',
     data: data,
   });
@@ -112,7 +112,7 @@ export async function changeRoleStatus(roleId: Key, status: string) {
  * @param roleIds
  */
 export async function delRole(roleIds: Key[]) {
-  return request<RuoYiApi.BaseRestResult>('/system/role/' + roleIds, {
+  return request<FrameApi.BaseRestResult>('/system/role/' + roleIds, {
     method: 'DELETE',
   });
 }

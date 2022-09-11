@@ -71,7 +71,7 @@ export async function getDept(deptId: Key) {
  * @param data
  */
 export async function addDept(data: DeptItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/dept', {
+  return request<FrameApi.BaseRestResult>('/system/dept', {
     method: 'POST',
     data: data
   });
@@ -82,7 +82,7 @@ export async function addDept(data: DeptItem) {
  * @param data
  */
 export async function updateDept(data: DeptItem) {
-  return request<RuoYiApi.BaseRestResult>('/system/dept', {
+  return request<FrameApi.BaseRestResult>('/system/dept', {
     method: 'PUT',
     data: data,
   });
@@ -93,7 +93,7 @@ export async function updateDept(data: DeptItem) {
  * @param deptId
  */
 export async function delDept(deptId: Key) {
-  return request<RuoYiApi.BaseRestResult>('/system/dept/' + deptId, {
+  return request<FrameApi.BaseRestResult>('/system/dept/' + deptId, {
     method: 'DELETE',
   });
 }

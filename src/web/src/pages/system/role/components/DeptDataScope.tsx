@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import type { FC, Key } from "react";
 import { Button, message, Tree } from "antd";
-import { ModalForm, ProFormSelect, ProFormText } from "@ant-design/pro-form";
+// import { ModalForm, ProFormSelect, ProFormText } from "@ant-design/pro-form";
+import {DrawerForm, ProFormText, ProFormSelect} from '@ant-design/pro-components';
 import { CheckCircleOutlined } from "@ant-design/icons";
 import type { DataNode } from "rc-tree/lib/interface";
 
@@ -105,7 +106,7 @@ const DeptDataScope: FC<{ roleId: Key }> = (props) => {
   }
 
   return (
-    <ModalForm<RoleItem>
+    <DrawerForm<RoleItem>
       onVisibleChange={(visible) => {
         setModalVisibleState(visible);
       }}
@@ -114,14 +115,6 @@ const DeptDataScope: FC<{ roleId: Key }> = (props) => {
         <Button icon={<CheckCircleOutlined />} size="small" type="text">
           数据权限
         </Button>
-      }
-      modalProps={
-        {
-          centered: false,
-          destroyOnClose: true,
-          keyboard: false,
-          maskClosable: false,
-        }
       }
       title="分配数据权限"
       width={500}
@@ -174,7 +167,7 @@ const DeptDataScope: FC<{ roleId: Key }> = (props) => {
           )}
         </>
       )}
-    </ModalForm>
+    </DrawerForm>
   );
 }
 
