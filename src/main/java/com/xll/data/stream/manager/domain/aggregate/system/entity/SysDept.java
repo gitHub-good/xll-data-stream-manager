@@ -2,7 +2,7 @@ package com.xll.data.stream.manager.domain.aggregate.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
+import com.xll.data.stream.manager.infrastructure.common.core.domain.BasePO;
 import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Data
 @TableName("t_sys_dept")
-public class SysDept extends BaseEntity {
+public class SysDept extends BasePO {
     /** 部门ID */
     @TableId
     private Long deptId;

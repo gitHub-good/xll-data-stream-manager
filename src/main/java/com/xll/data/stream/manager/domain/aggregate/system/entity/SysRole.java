@@ -2,7 +2,7 @@ package com.xll.data.stream.manager.domain.aggregate.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
+import com.xll.data.stream.manager.infrastructure.common.core.domain.BasePO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,7 +23,7 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysRole extends BaseEntity {
+public class SysRole extends BasePO {
     /** 角色ID */
     @TableId
     private Long roleId;

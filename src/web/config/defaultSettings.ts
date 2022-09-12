@@ -6,15 +6,15 @@ const Settings: LayoutSettings & {
 } = {
   "navTheme": "realDark",
   "primaryColor": "#13C2C2",
-  "layout": "mix",
-  "contentWidth": "Fluid",
+  "layout": "top",
+  "contentWidth": "Fixed",
   "fixedHeader": false,
   "fixSiderbar": true,
   "pwa": true,
   title: '数据管理平台',
   "logo": "/logo.svg",
   "headerHeight": 48,
-  "splitMenus": true
-};
+  "splitMenus": false
+}
 
 export default Settings;

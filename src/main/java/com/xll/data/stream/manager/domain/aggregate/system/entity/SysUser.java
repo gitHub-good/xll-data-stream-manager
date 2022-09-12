@@ -2,7 +2,7 @@ package com.xll.data.stream.manager.domain.aggregate.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
+import com.xll.data.stream.manager.infrastructure.common.core.domain.BasePO;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -20,7 +20,7 @@ import java.util.List;
 @Data
 @Accessors(chain = true)
 @TableName(value = "t_sys_user")
-public class SysUser extends BaseEntity {
+public class SysUser extends BasePO {
 
     /** 用户ID */
     @TableId

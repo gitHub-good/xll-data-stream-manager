@@ -3,7 +3,7 @@ package com.xll.data.stream.manager.domain.aggregate.system.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
+import com.xll.data.stream.manager.infrastructure.common.core.domain.BasePO;
 import lombok.Data;
 
 /**
@@ -16,7 +16,7 @@ import lombok.Data;
  */
 @Data
 @TableName("t_sys_post")
-public class SysPost extends BaseEntity {
+public class SysPost extends BasePO {
 
     /** 岗位序号 */
     @TableId

@@ -2,7 +2,7 @@ package com.xll.data.stream.manager.domain.aggregate.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
+import com.xll.data.stream.manager.infrastructure.common.core.domain.BasePO;
 import lombok.Data;
 
 /**
@@ -12,7 +12,7 @@ import lombok.Data;
  */
 @Data
 @TableName("t_sys_dict_type")
-public class SysDictType extends BaseEntity {
+public class SysDictType extends BasePO {
 
     /** 字典主键 */
     @TableId

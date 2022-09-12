@@ -19,7 +19,7 @@ import java.util.Map;
  * @Date: 2022/8/27 14:25
  */
 @Data
-public class BaseEntity implements Serializable {
+public class BasePO implements Serializable {
 
     /** 创建者 */
     private String createBy;

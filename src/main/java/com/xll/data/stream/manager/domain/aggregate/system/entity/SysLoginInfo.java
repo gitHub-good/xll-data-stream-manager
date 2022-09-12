@@ -3,7 +3,7 @@ package com.xll.data.stream.manager.domain.aggregate.system.entity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
+import com.xll.data.stream.manager.infrastructure.common.core.domain.BasePO;
 import lombok.Data;
 
 import java.util.Date;
@@ -18,7 +18,7 @@ import java.util.Date;
  */
 @Data
 @TableName("t_sys_login_info")
-public class SysLoginInfo extends BaseEntity {
+public class SysLoginInfo extends BasePO {
 
     /** ID */
     @TableId

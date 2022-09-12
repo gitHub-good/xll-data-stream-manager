@@ -2,17 +2,20 @@ package com.xll.data.stream.manager.domain.aggregate.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
+import com.xll.data.stream.manager.infrastructure.common.core.domain.BasePO;
 import lombok.Data;
 
 /**
- * 参数配置表 sys_config
- * 
- *
+ * 功能描述: <br>
+ * <p>
+ * 〈参数配置表 sys_config〉
+ * </p>
+ * @Author: xuliangliang
+ * @Date: 2022/9/12 21:04
  */
 @Data
 @TableName("t_sys_config")
-public class SysConfig extends BaseEntity {
+public class SysConfig extends BasePO {
     /**
      * 参数主键
      */

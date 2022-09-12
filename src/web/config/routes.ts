@@ -207,6 +207,20 @@
     ]
   },
   {
+    path: '/lineFlow',
+    name: '榫卯编排',
+    icon: 'tool',
+    routes: [
+      {
+        path: '/lineFlow',
+        name: '业务编排',
+        icon: 'smile',
+        component: './lineFlow/index',
+        access: 'lineFlow:list',
+      },
+    ]
+  },
+  {
     path: '/xFlow',
     name: 'xFlow',
     icon: 'tool',

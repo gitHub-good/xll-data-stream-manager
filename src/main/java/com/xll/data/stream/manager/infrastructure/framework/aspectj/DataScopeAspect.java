@@ -3,7 +3,7 @@ package com.xll.data.stream.manager.infrastructure.framework.aspectj;
 import com.xll.data.stream.manager.domain.aggregate.system.entity.SysRole;
 import com.xll.data.stream.manager.domain.aggregate.system.entity.SysUser;
 import com.xll.data.stream.manager.infrastructure.common.annotation.DataScope;
-import com.xll.data.stream.manager.infrastructure.common.core.domain.BaseEntity;
+import com.xll.data.stream.manager.infrastructure.common.core.domain.BasePO;
 import com.xll.data.stream.manager.infrastructure.common.core.domain.model.LoginUser;
 import com.xll.data.stream.manager.infrastructure.common.core.text.Convert;
 import com.xll.data.stream.manager.infrastructure.common.utils.SecurityUtils;
@@ -126,9 +126,9 @@ public class DataScopeAspect {
 
         if (StringUtils.isNotBlank(sqlString.toString())) {
             Object params = joinPoint.getArgs()[0];
-            if (StringUtils.isNotNull(params) && params instanceof BaseEntity) {
-                BaseEntity baseEntity = (BaseEntity) params;
-                baseEntity.getParams().put(DATA_SCOPE, " AND (" + sqlString.substring(4) + ")");
+            if (StringUtils.isNotNull(params) && params instanceof BasePO) {
+                BasePO basePO = (BasePO) params;
+                basePO.getParams().put(DATA_SCOPE, " AND (" + sqlString.substring(4) + ")");
             }
         }
     }
@@ -138,9 +138,9 @@ public class DataScopeAspect {
      */
     private void clearDataScope(final JoinPoint joinPoint) {
         Object params = joinPoint.getArgs()[0];
-        if (StringUtils.isNotNull(params) && params instanceof BaseEntity) {
-            BaseEntity baseEntity = (BaseEntity) params;
-            baseEntity.getParams().put(DATA_SCOPE, "");
+        if (StringUtils.isNotNull(params) && params instanceof BasePO) {
+            BasePO basePO = (BasePO) params;
+            basePO.getParams().put(DATA_SCOPE, "");
         }
     }
 }

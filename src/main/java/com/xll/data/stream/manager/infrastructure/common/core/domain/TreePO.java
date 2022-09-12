@@ -14,7 +14,7 @@ import java.util.List;
  * @Date: 2022/8/27 14:28
  */
 @Data
-public class TreeEntity extends BaseEntity {
+public class TreePO extends BasePO {
     /** 父菜单名称 */
     private String parentName;
 
